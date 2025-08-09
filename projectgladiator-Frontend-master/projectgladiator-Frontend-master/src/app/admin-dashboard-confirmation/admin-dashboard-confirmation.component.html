@@ -1,0 +1,16 @@
+<div >
+    <h3>Confirm Approval</h3>
+   <h4> User Id:{{id}} &nbsp;  Username:{{name}} &nbsp; Card Type:{{card}} </h4>
+   <span id="message">
+   The request submitted by the user is granted,upon submission of the required documents 
+   with compliance to organizational policy and   the user meeting the eligibility criteria.
+</span>
+    <br/> 
+    <span id="Confirm">
+    <input type="checkbox" name="isTCAccepted" [ngModel]="isTCAccepted" required #tc="ngModel">Details Verified
+</span>
+    <span *ngIf="tc.invalid"> 
+        
+    </span> 
+<button [disabled]="tc.invalid" class="btn btn-success" (click)=approve()>Submit</button>
+</div>

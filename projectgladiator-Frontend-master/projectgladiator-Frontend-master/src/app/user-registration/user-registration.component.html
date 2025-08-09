@@ -1,0 +1,159 @@
+
+<!--<p>User Registration</p>
+<form (ngSubmit)="Register()">
+    Enter Name : <input type="text" name="name" [(ngModel)]=register.name required><br />
+
+
+
+<<form id="form" (ngSubmit)="Register()" >
+    Enter Name : <input type="text" name="name" [(ngModel)]=register.name required><br />    
+    Enter Phone No. : <input type="number" name="phoneno" [(ngModel)]=register.phoneNumber><br />
+    Enter Email : <input type="email" name="email" [(ngModel)]=register.email><br />
+    Enter Username(unique) : <input type="text" name="username" [(ngModel)]=register.username><br />
+    Enter Password : <input type="password" name="password" [(ngModel)]=register.password><br />
+    Enter Address : <input type="text" name="address" [(ngModel)]=register.address><br />
+    Enter Card Type : <input type="text" name="cardtype" [(ngModel)]=register.cardType><br />
+    Enter Bank : <input type="text" name="bank" [(ngModel)]=register.bankName><br />
+    Enter Account No. : <input type="text" name="accountno" [(ngModel)]=register.accountNumber><br />
+    Enter IFSC : <input type="text" name="ifsc" [(ngModel)]=register.ifsc><br />
+    <button type="submit">Register</button>
+</form>-->
+
+
+
+
+<div class="container">
+
+    <div>
+        <h4>User Registration</h4>
+
+        <form #registerForm="ngForm" (ngSubmit)="Register()">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" 
+                required [(ngModel)]=register.name name="name" #name="ngModel">
+                
+                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                    Name is Required.
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="text" class="form-control" id="phoneNumber"
+                required [(ngModel)]=register.phoneNumber name="phoneno" #phoneno="ngModel">
+
+                <div [hidden]="phoneno.valid || phoneno.pristine" class="alert alert-danger">
+                    Phone Number is Required.
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email"
+                required [(ngModel)]=register.email name="email" #email="ngModel">
+
+                <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                    Email is Required.
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username"
+                required [(ngModel)]=register.username name="username" #username="ngModel">
+
+                <div [hidden]="username.valid || username.pristine" class="alert alert-danger">
+                    Username is Required.
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password"
+                required [(ngModel)]=register.password name="password" #password="ngModel">
+
+                <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
+                    Password is Required.
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" class="form-control" id="address"
+                required [(ngModel)]=register.address name="address" #address="ngModel">
+
+                <div [hidden]="address.valid || address.pristine" class="alert alert-danger">
+                    Address is Required.
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label>Choose the Card type you want:</label>
+                            
+                    <div class="form-control">
+                        <label class="radio-inline">
+                            <input type="radio" required #cardtype="ngModel" value="Gold" name="cardtype"
+                                [(ngModel)]="register.cardType">Gold 
+                        </label>
+
+                        <label class="radio-inline">
+                            <input type="radio" required #cardtype="ngModel" value="Platinum" name="cardtype"
+                             [(ngModel)]="register.cardType">Platinum
+                        </label>
+                    </div>
+               
+
+                <div [hidden]="cardtype.valid || cardtype.pristine" class="alert alert-danger">
+                    Card Type Selection is Required.
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="bank">Bank Name:</label>
+                <input type="text" class="form-control" id="bank"
+                required [(ngModel)]=register.bankName name="bankName" #bankName="ngModel">
+
+                <div [hidden]="bankName.valid || bankName.pristine" class="alert alert-danger">
+                     Bank Name is Required.
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="accountNumber">Account Number:</label>
+                <input type="text" class="form-control" id="accountNumber"
+                required [(ngModel)]=register.accountNumber name="accountno" #accountno="ngModel">
+
+                <div [hidden]="accountno.valid || accountno.pristine" class="alert alert-danger">
+                    Account Number Selection is Required.
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="ifsc">IFSC Code:</label>
+                <input type="text" class="form-control" id="ifsc"
+                required [(ngModel)]=register.ifsc name="ifsc" #ifsc="ngModel">
+
+                <div [hidden]="ifsc.valid || ifsc.pristine" class="alert alert-danger">
+                    IFSC Code is Required.
+                </div>
+
+
+            </div>
+
+            <button type="submit" [disabled]="!registerForm.form.valid" class="btn btn-success">Register</button>
+
+
+        </form>
+    </div>
+
+</div>

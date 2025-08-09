@@ -1,0 +1,32 @@
+<body>
+    <h4><a routerLink='dashboard'>Go Back To Dashboard</a></h4><br />
+<div id="a1">
+<h1>Order Summary</h1>
+<div *ngIf="status; else elseBlock">
+    <h3>Product Details</h3>
+    <div *ngIf="product">
+         {{product.name}}<br />
+         {{product.type}}<br />
+         {{product.productDetails}}<br />
+        Price: {{product.price}}<br /><br />
+        <img id = "p-image" src={{product.imageUrl}}/> 
+    </div>
+
+    <h3>Delivery Details</h3>
+    <div>
+        Address : {{address}}<br>
+        Pin : {{pin}}<br>
+        Phone : {{phone}}
+    </div>
+    <h3>EMI details</h3>
+    <div>
+        EMI amount : {{emiPerMonth | number : '1.2-2'}}
+        EMI tenure : {{months}}
+    </div>
+</div>
+
+    <div id="invalid">
+    <ng-template #elseBlock>Your order could not be completed due to insufficient balance</ng-template>
+</div>
+</div>
+</body>

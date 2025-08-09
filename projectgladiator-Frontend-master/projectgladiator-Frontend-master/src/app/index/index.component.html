@@ -1,0 +1,89 @@
+<!-- <div id="head">
+    <img id="head-image" src="assets/images/logo.png" />
+</div> -->
+
+<app-navbar></app-navbar>
+
+<!-- <div id="img2">
+    <img id="image1" src="assets/images/emi.jpeg" />
+</div> -->
+
+    <div class="split left" title={{product.name}}>
+        <img id="p-image" src={{product.imageUrl}} />
+        <div class="details"><br />
+            <br />
+            <a routerLink='card-details'>Charges for registration and<br />
+                EMI card details</a>
+        </div>
+    </div>
+
+    <app-search-component></app-search-component>
+
+
+    <div *ngIf="product" class="split right">
+        <h2>{{product.name}}</h2>
+        <h3>Features</h3>
+        <ul>
+            <div *ngFor="let feature of features">
+                <li>
+                    <h4>{{feature}}</h4>
+                </li>
+            </div>
+        </ul><br />
+        <div id="price">
+            <b>Price</b><span id="item-price"> {{product.price}} INR</span>
+        </div><br />
+        <button name="{{product.productId}}" (click)="getProduct($event)" class="button1">Buy Now</button>
+    </div>
+
+<!-- <div [ngStyle]="{background-image: 'url(assets\images\wp2446267-finance-wallpapers.jpg)}"></div> -->
+
+<!-- 
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshay Finance</title>
+</head>
+<body>
+    <div class="container">
+        <app-navbar></app-navbar>
+
+        <section id="Products">
+            <h1>Products</h1>
+
+            <div *ngIf="product" class="split right">
+                <h2>{{product.name}}</h2>
+                <h3>Features</h3>
+                <ul>
+                    <div *ngFor="let feature of features">
+                        <li><h4>{{feature}}</h4></li>
+                    </div>
+                </ul><br />
+                <div id = "price">
+                    <b>Price</b><span id = "item-price">  {{product.price}} INR</span>
+                </div><br />
+                <button name="{{product.productId}}" (click)="getProduct($event)" class="button1">Buy Now</button>
+            </div> 
+        </section>
+
+        <section id="Contact">
+            <h1>Contact Us</h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Esse beatae atque ducimus eaque tenetur, perferendis labore 
+            commodi! Laborum itaque ullam optio eum
+            , neque nesciunt quo facere deleniti quasi nulla libero?
+
+        </section>
+
+    </div>
+
+
+</body>
+</html> -->
+
+

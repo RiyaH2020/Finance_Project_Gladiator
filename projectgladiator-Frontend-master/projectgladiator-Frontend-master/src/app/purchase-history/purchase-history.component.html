@@ -1,0 +1,40 @@
+<div class="split left">
+    <div class = "links">
+        <h4><a routerLink='dashboard'>Dashboard</a></h4><br />
+        <h4><a routerLink='products-list'>Products</a></h4><br />
+        <h4><a routerLink='transaction'>Recent Transactions</a></h4><br />
+        <h4><a routerLink='installment'>Installments</a></h4><br />
+        <h4><a routerLink='profile'>Profile</a></h4>
+    </div>
+</div>
+<div class="split right">
+    <app-header></app-header>
+    <div *ngFor="let order of orders">
+        <div class="box" (click)=function($event,order.orderId,order.emiScheme,order.placedDate)>
+            <div class="image-container" title={{order.product.name}}>
+                <img id = "p-image" src={{order.product.imageUrl}} /> 
+            </div>
+            <div class="content">
+                <div class="name"><h2>{{order.product.name}}</h2></div>
+                <div id = "price">
+                    <b>Amount</b><span id = "item-price">  {{order.product.price}} INR</span>
+                </div>
+                <div class="details">
+                    <h4>{{order.product.productDetails}}</h4>
+                </div>
+                <div class="date">
+                    <h4><b>Placed Date:</b>{{order.placedDate}}</h4>
+                </div>
+                <div class="no">
+                    <h4><b>Order #:</b>{{order.orderId}}</h4>
+                </div>
+                <div class="scheme">
+                    <h4><b>EMI Scheme:</b>{{order.emiScheme}}</h4>
+                </div>
+                <button  (click)="function1($event,order.product.productId)" class="button1">Buy Again</button>
+               <!-- <button  (click)="function1($event,order.product.productId,order.address,order.emiScheme)" class="button1">Order Details</button>-->
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="split left">
+    <div class = "links">
+        <div *ngIf="isLogged">
+        <h4><a routerLink='dashboard'>Dashboard</a></h4><br />        
+        <div *ngIf="isApproved">
+            <h4><a routerLink='product'>Purchase History</a></h4><br />
+            <h4><a routerLink='transaction'>Recent Transactions</a></h4><br />
+            <h4><a routerLink='installment'>Installments</a></h4><br />
+         </div>
+         <h4><a routerLink='profile'>Profile</a></h4><br />
+        </div>
+    </div>
+</div>
+
+<div class="split right">
+    <app-header></app-header>
+    <div *ngIf="products">
+        <div *ngFor="let product of products">
+            <div class="box">
+                <div class="image-container" title={{product.name}}>
+                    <img id = "p-image" src={{product.imageUrl}} /> 
+                </div>
+                <div class="content">
+                    <div class="name"><h2>{{product.name}}</h2></div>
+                    <div id = "price">
+                        <b>Price</b><span id = "item-price">  {{product.price}} INR</span>
+                    </div>
+                    <div class="details">
+                        <h4>{{product.productDetails}}</h4>
+                    </div>
+                    <button name="{{product.productId}}" (click)="getProduct($event)" class="button1">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

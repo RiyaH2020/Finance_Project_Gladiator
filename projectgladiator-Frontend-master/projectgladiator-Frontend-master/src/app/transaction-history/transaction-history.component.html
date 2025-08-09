@@ -1,0 +1,38 @@
+<div class="split left">
+    <div class = "links">
+        <h4><a routerLink='dashboard'>Dashboard</a></h4><br />
+        <h4><a routerLink='products-list'>Products</a></h4><br />
+        <h4><a routerLink='product'>Purchase History</a></h4><br />
+        <h4><a routerLink='installment'>Installments</a></h4><br />
+        <h4><a routerLink='profile'>Profile</a></h4>
+    </div>
+</div>
+<div class="split right">
+    <app-header></app-header>
+    <table id = "users">
+        <tr>
+            <th>Installment Number</th>
+            <th>Installment Amount</th>
+            <th>Installment Due Date</th>
+            <th>Installment Payment Mode</th>
+            <th>Installment Paid On Date</th>
+            <th>Order Id</th>
+            <th>Product Id</th>
+        </tr>
+        <tr *ngFor="let transaction of transactions">
+            <td>
+            {{ transaction.installmentNumber }}    
+            </td>
+            <td>{{transaction.installmentAmount | number : '1.2-2' }}</td>
+            <td>{{transaction.dueDate}}</td>
+            <td>{{transaction.paymentMode}}</td>
+            <td> {{transaction.paidOnDate}}</td>
+            <td> {{transaction.order.orderId}}</td>
+            <td>{{transaction.order.product.productId}}</td> 
+        </tr>
+    </table>
+</div>
+
+
+
+            

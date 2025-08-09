@@ -1,0 +1,51 @@
+<!--<p>Admin Form </p>
+<form (ngSubmit)="checkLogin()">
+    Enter Username: <input type="text" name="name" [(ngModel)]=login.name><br />
+    Enter Password: <input type="password" name="password" [(ngModel)]=login.password><br />
+    <Button type="submit">Login</Button>
+    <div *ngIf="message">
+        {{message}}
+    </div>
+</form>
+-->
+
+<div class="container">
+    <div>
+        <h4>Admin Login</h4>
+
+        <form #loginForm="ngForm" (ngSubmit)="checkLogin()">
+
+            <div class="form-group">
+                <label for="name">Enter Username:</label>
+                <input type="text" class="form-control" id="name" 
+                required [(ngModel)]=login.name name="name" #name="ngModel">
+                
+                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                   User Name is Required.
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password"
+                required [(ngModel)]=login.password name="password" #password="ngModel">
+
+                <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
+                    Password is Required.
+                </div>
+
+            </div>
+
+            <button type="submit" [disabled]="!loginForm.form.valid" class="btn btn-success">Log In</button>
+
+
+            <div *ngIf="message">
+                {{message}}
+            </div>
+
+        </form>
+    </div>
+</div>
+

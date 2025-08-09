@@ -1,0 +1,30 @@
+<div class="split left">
+    <div class="links">
+        <h4><a routerLink='dashboard'>Dashboard</a></h4><br />
+        <h4><a routerLink='products-list'>Products</a></h4><br />
+        <h4><a routerLink='transaction'>Recent Transactions</a></h4><br />
+        <h4><a routerLink='installment'>Installments</a></h4><br />
+    </div>
+</div>
+<div class="right">
+    <app-header></app-header>
+<div id="b1">
+    <div id="b2">
+    <h1>Order confirmation</h1>
+    <br>
+    <h3>Address Details</h3>
+    <form>
+        Address : <input type="text" name="address" [(ngModel)]=address required=true><br>
+        <div id="pin">
+        Pin Code : <input type="text" name="pin" [(ngModel)]=pin required><br>
+    </div>
+       <div id="phone">
+        Phone number : <input type="text" name="phone" [(ngModel)]=phone required><br>
+    </div>
+    </form>
+    
+    <br>
+    <button type="submit" (click)="payNow()">Confirm Order</button>
+</div>
+</div>
+</div>

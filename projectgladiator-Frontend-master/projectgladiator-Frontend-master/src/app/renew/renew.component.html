@@ -1,0 +1,19 @@
+<div class="form-group">
+    <label>Choose the Card type you want:</label>
+                
+        <div class="form-control">
+            <label class="radio-inline">
+                <input type="radio" required #cardtype="ngModel" value="Gold" name="cardtype"
+                    [(ngModel)]="renewApp.cardType">Gold 
+            </label>
+
+            <label class="radio-inline">
+                <input type="radio" required #cardtype="ngModel" value="Platinum" name="cardtype"
+                 [(ngModel)]="renewApp.cardType">Platinum
+            </label>
+        </div>
+        <div [hidden]="cardtype.valid || cardtype.pristine" class="alert alert-danger">
+            Card Type Selection is Required.
+        </div>
+
+        <button type="submit" [disabled]="!renewApp.cardType" class="btn btn-success" (click)=renewCheck()>Apply</button>

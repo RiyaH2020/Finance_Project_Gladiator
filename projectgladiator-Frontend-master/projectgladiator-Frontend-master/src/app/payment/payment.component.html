@@ -1,0 +1,41 @@
+<!--
+<form (ngSubmit)="Pay()">
+    Enter payment mode: <input type="text" name="name" [(ngModel)]=pay.paymentMode><br />
+    <Button type="submit">Pay</Button>
+</form>
+
+-->
+
+
+<div class="container">
+
+    <div>
+        <h3>Choose A Payment Mode:</h3>
+        <form #payForm="ngForm" (ngSubmit)="Pay()">
+            <div class="form-group">
+                
+                <div class="form-control">
+                    <label class="radio-inline">
+                        <input type="radio" required value="Net Banking" name="PaymentMode"
+                            [(ngModel)]="pay.paymentMode">Net Banking  
+                    </label>
+
+                    <label class="radio-inline">
+                        <input type="radio" required value="UPI" name="PaymentMode"
+                         [(ngModel)]="pay.paymentMode">UPI  
+                    </label>
+
+                    <label class="radio-inline">
+                        <input type="radio" required value="Debit Card" name="PaymentMode"
+                         [(ngModel)]="pay.paymentMode">Debit Card  
+                    </label>
+                </div>
+                
+            </div>
+            
+            <Button type="submit" [disabled]="!payForm.form.valid" class="btn btn-success">Pay</Button>
+            
+        </form>
+    </div>
+</div>
+

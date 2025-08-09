@@ -1,0 +1,21 @@
+<h4><a routerLink='/'>Go Back To Index</a></h4><br />
+<div *ngIf="products">
+    <div *ngFor="let product of products">
+        <div class="box" (click)=getSearchedProduct1($event,product.productId)>
+            <div class="image-container">
+                <img id = "p-image" src={{product.imageUrl}} /> 
+            </div>
+            <div class="content">
+                <div class="name"><h2>{{product.name}}</h2></div>
+                <div id = "price">
+                    <b>Amount</b><span id = "item-price">  {{product.price}} INR</span>
+                </div>
+                <div class="details">
+                    <h4>{{product.productDetails}}</h4>
+                </div>
+                <button name="{{product.productId}}" (click)="getSearchedProduct($event)" class="button1">Buy Now</button>
+               
+            </div>
+        </div>
+    </div>
+</div>

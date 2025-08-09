@@ -1,0 +1,26 @@
+#user{
+    position:fixed;
+    color: white;
+    background-color: #cce5f8;
+    width: 85%;
+    top:0%;
+    height: 10%;
+  }
+
+  
+h4{
+ float: right;   
+ position: relative;
+ top:20%;
+ right:5%;
+ color: #191970;
+}
+
+#page{
+  float: left;   
+  position: relative;
+  top:20%;
+  left:5%;
+  color: #191970;
+ }
+ 

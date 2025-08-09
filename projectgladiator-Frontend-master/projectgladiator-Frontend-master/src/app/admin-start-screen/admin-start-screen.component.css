@@ -1,0 +1,58 @@
+.links{
+    top:20%;
+    position: relative;
+}
+
+.split {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .left {
+    text-align: left;
+    box-shadow: 2px;    
+    background-color:#191970;
+    width: 15%;
+    padding: 10px;
+  }
+
+  h4 a{
+    color: white;
+  }
+  
+  .right {
+    background-color:white;
+    width:100%;
+    left:15%;
+  }
+
+  #user{
+    position:fixed;
+    color: white;
+    background-color: #cce5f8;
+    width: 85%;
+    top:0%;
+    height: 10%;
+  }
+
+  .welcome{
+      color: #191970;
+      float: right;
+      margin-right: 2%;
+      margin-top: 7px;
+  }
+
+  .count{
+    top:10%;
+    background-color: rgb(207, 207, 207);
+    position: absolute;
+    width: 85%;
+    height: 10%;
+    text-align: center;
+    padding-top: 20px;
+    color: #191970;
+  }

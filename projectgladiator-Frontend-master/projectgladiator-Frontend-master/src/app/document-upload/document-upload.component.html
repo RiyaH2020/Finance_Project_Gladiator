@@ -1,0 +1,22 @@
+<div id=instructions>
+    <b><h4>Please follow the given instructions:</h4>
+    <ol>
+        <li>Upload a clear scanned pdf of your proof.(Aadhar Card/Pancard/Passport)<br /></li>
+        <li>The size of the document should not be more than 10MB.<br /></li>
+        <li>After successfully uploading the document the status of your card would be pending for approval <br />
+        and it would be updated within 24 hrs.<br /></li>
+        <li>Once the card is granted you can use it thereby.<br /></li>
+        <li> The price of the product you purchase would thereby be decreased from the card.<br /></li>
+
+    </ol>
+</b>
+</div>
+
+
+<div id=upload>
+    <form (ngSubmit)="upload()">
+       <h3> Select your Document:</h3> <input type="file" name="t1" (change)="onFileChange($event)"/><br>
+
+        <button type="submit">Upload</button>
+    </form>
+</div>

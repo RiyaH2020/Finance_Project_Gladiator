@@ -1,0 +1,116 @@
+#card{
+    border: 1px solid black;
+    position: absolute;
+    top:30%;
+    left:25%;
+    height:40%;
+    width:35%;
+    padding-top:10px;
+    padding-left: 12px;
+    border-radius: 15px;
+    color:#191970;
+    background-color:#EBF4FB;
+    box-shadow: 3px 3px 3px #191970;
+    border-color:aliceblue;
+    text-align: justify;    
+}
+
+#card h3{
+  text-align: center;
+}
+
+.split {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .left {
+    text-align: left;
+    box-shadow: 2px;    
+    background-color:#191970;
+    width: 15%;
+    padding: 10px;
+  }
+
+  h4 a{
+    color: white;
+  }
+  
+  .right {
+    background-color:white;
+    width:100%;
+    left:15%;
+  }
+
+  .emi{
+    color: #FF0000;
+  }
+
+  .links{
+      top:20%;
+      position: relative;
+  }
+
+ #user{
+   position:fixed;
+   top: 20px;
+   color: white;
+ }
+  
+ #valid 
+ {
+   position: relative;
+   border: 1px solid green;
+   background-color : green;
+   width : 100px;
+   font-size: 15px;
+   margin: auto;
+   top: 30px;
+   padding: 10px;
+   color: white;
+ }
+
+ #invalid 
+ {
+   position: relative;
+   border: 1px solid red;
+   background-color : red;
+   width : 120px;
+   font-size: 15px;
+   margin: auto;
+   top: 30px;
+   padding: 10px;
+   color: white;
+ }
+  .alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+  }
+  
+  
+  .emi{
+    top:10%;
+    background-color: rgb(207, 207, 207);
+    position: absolute;
+    width: 85%;
+    height: 10%;
+    text-align: center;
+    padding-top: 20px;
+    color: #191970;
+  }
+
+  .notify a{
+    color: brown;
+  }
+
+  .pending{
+    position: absolute;
+    top:30%;
+    color: coral;
+    left:450px;
+  }

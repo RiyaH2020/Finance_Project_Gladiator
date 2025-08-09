@@ -1,0 +1,17 @@
+<div class="split left">
+    <div class = "links">  
+       <h4><a routerLink='index'>Home</a></h4><br>
+        <h4><a routerLink='logout' (click)="logoutFunction()">Logout</a></h4>
+    </div>
+ </div>
+<div class="split right">
+    <div id=user>
+        <span class="welcome">
+            <h4><i>Welcome!</i></h4>
+        </span>
+    </div>
+    <div class="count">  
+        <strong>{{count}} Users</strong>  are Not Approved. 
+        <a routerLink='admindashboard'>Click here</a> to See Details
+    </div>
+</div>

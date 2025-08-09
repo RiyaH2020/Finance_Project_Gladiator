@@ -1,0 +1,38 @@
+<a routerLink='index'>HOME</a>    
+    <div *ngIf=users>
+        <h1>User Data</h1>
+        <hr>
+        <table id="users">
+            <tr>
+                <th>user id</th>
+                <th>name</th>
+                <th>username</th>
+                <th>phone number</th>
+                <th>email</th>
+                <th>address</th>
+                <th>document</th>
+                <th>cardType</th>
+                <th>bankName</th>
+                <th>accountNumber</th>
+                <th>ifsc</th>
+                <th>status</th>
+                <th>Approval</th>
+            </tr>
+            <tr *ngFor="let u of users">
+                <td>{{u.userId}}</td>
+                <td>{{u.name}}</td> 
+                <td>{{u.username}}</td> 
+                <td>{{u.phoneNumber}}</td>
+                <td>{{u.email}}</td>
+                <td>{{u.address}}</td>
+                <td>{{u.document}}</td>
+                <td>{{u.cardType}}</td>
+                <td>{{u.bankName}}</td>
+                <td>{{u.accountNumber}}</td>
+                <td>{{u.ifsc}}</td>
+                <td>{{u.status}}</td>
+                <td><button id="{{u.userId}}" (click)="setStatus($event,u.userId,u.username,u.cardType)">Approve</button></td>
+            </tr>
+        </table>
+    </div>
+<br>

@@ -1,0 +1,13 @@
+button{
+    background-color: #191970;
+    color: white;
+}
+button:disabled,
+button[disabled]:hover{
+  background-color: #191970;
+  color: white;
+}
+button:hover{
+    background-color:#191970 ;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}

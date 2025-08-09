@@ -1,0 +1,25 @@
+<div class="split left">
+    <div class="links">
+        <h4><a routerLink='dashboard'>Dashboard</a></h4><br />
+        <h4><a routerLink='products-list'>Products</a></h4><br />
+        <h4><a routerLink='transaction'>Recent Transactions</a></h4><br />
+        <h4><a routerLink='installment'>Installments</a></h4><br />
+    </div>
+</div>
+<div class="right">
+    <app-header></app-header>
+<div id="b1">
+    
+    <div id="b2">
+        <br>
+        <h3>Order details</h3>
+        <br />
+        <span class="headings">Product name: </span>{{productName}}<br />
+        <span class="headings">Original Price: </span>{{productPrice}}<br /> 
+        <span class="headings">EMI scheme : </span>{{months}} months <br>
+        <br /><strong> {{emiPerMonth | number : '1.2-2'}} per month</strong>
+    <br /><br />
+    <button type="submit" (click)="confirmOrder()">Place order</button>
+</div>
+</div>
+</div>

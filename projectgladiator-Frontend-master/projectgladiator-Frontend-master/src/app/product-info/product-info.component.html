@@ -1,0 +1,57 @@
+<div class="split left">
+    <div class = "links">
+        <div *ngIf="isLogged; then thenBlock; else elseBlock"></div>
+        <ng-template #thenBlock>
+            <h4><a routerLink='dashboard'>Dashboard</a></h4><br />
+            <h4><a routerLink='products-list'>Products</a></h4><br />
+            <div *ngIf="!isNotApproved">
+                <h4><a routerLink='product'>Purchase History</a></h4><br />
+                <h4><a routerLink='transaction'>Recent Transactions</a></h4><br />
+                <h4><a routerLink='installment'>Installments</a></h4><br />
+            </div>
+        </ng-template>
+        <ng-template #elseBlock>
+            <h4><a routerLink='products-list'>All Products</a></h4><br />
+        </ng-template>
+    </div>
+</div>
+
+<div class="split right">
+    <app-header></app-header>
+    <div class="emi">
+        <div *ngIf="isNotApproved">
+            <marquee><b>Approval is pending.. cannot order product</b></marquee>
+        </div>
+    </div>
+    <div *ngIf="product">
+            <div class="box">
+                <div class="image-container" title={{product.name}}>
+                    <img id = "p-image" src={{product.imageUrl}} /> 
+                </div>
+                <div class="content">
+                    <div class="name"><h2>{{product.name}}</h2></div>
+                    <div *ngFor="let feature of features" class="features">
+                        <li>{{feature}}</li>
+                    </div>
+                    <div id = "price">
+                        <b>Price</b><span id = "item-price">  {{product.price}} INR</span>
+                    </div>
+                    <div class="emi-details">
+                        <div class="select">
+                            <select [(ngModel)]="selectedMonths" (change)="calculateEmi()" name="slct" id="slct">
+                                <option *ngFor="let months of monthsOptions;" [value]="months">{{months}} Months
+                                </option>
+                            </select><br />
+                        </div>
+                    </div>
+                    <div *ngIf="!isNotApproved">
+                        <button type="submit" (click)="validate()" class="button1">Pay Now</button>
+                    </div>
+                    <div *ngIf="message" class="message">{{message}}</div>
+                    <div class="eper">
+                        <div *ngIf="emiPerMonth">Emi starting {{emiPerMonth | number : '1.2-2'}} per month</div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

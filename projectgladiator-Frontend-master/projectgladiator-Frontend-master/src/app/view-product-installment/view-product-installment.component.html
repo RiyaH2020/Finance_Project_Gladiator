@@ -1,0 +1,30 @@
+<div class="split left">
+    <div class = "links">
+        <h4><a routerLink='dashboard'>Dashboard</a></h4><br />
+        <h4><a routerLink='products-list'>Products</a></h4><br />
+        <h4><a routerLink='transaction'>Recent Transactions</a></h4><br />
+        <h4><a routerLink='installment'>Installments</a></h4><br />
+        <h4><a routerLink='profile'>Profile</a></h4>
+    </div>
+</div>
+<div class="split right">
+    <app-header></app-header>
+    <h3><a routerLink='product'>Back</a></h3>
+    <span id="details"><h4>Order Id:{{orderId}} Scheme:{{scheme}} Placed Date:{{date}}</h4></span>
+<table id = "installments">
+    <tr>
+        <th>Installment Number</th>
+        <th>Installment Amount</th>
+        <th>Installment Due Date</th>
+        <th>Installment Payment Mode</th>
+        <th>Installment Paid On Date</th>
+    </tr>
+    <tr *ngFor="let installment of installments">
+        <td>{{ installment.installmentNumber }}</td>
+        <td>{{installment.installmentAmount }}</td>
+        <td>{{installment.dueDate}}</td>
+        <td>{{installment.paymentMode}}-</td>
+        <td> {{installment.paidOnDate}}-</td>
+    </tr>
+</table>
+</div>

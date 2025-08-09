@@ -1,0 +1,49 @@
+<div class="split left">
+   <div class="links">
+      <h4><a routerLink='index'>Home</a></h4><br>
+      <h4><a routerLink='products-list'>Products</a></h4><br />
+      <div *ngIf="isApproved">
+         <h4><a routerLink='product'>Purchase History</a></h4><br />
+         <h4><a routerLink='transaction'>Recent Transactions</a></h4><br />
+         <h4><a routerLink='installment'>Installments</a></h4><br />
+      </div>
+      <h4><a routerLink='profile'>Profile</a></h4><br />
+      <h4><a routerLink='renew'>Renew</a></h4><br />
+      <h4><a routerLink='logout' (click)="logoutFunction()">Logout</a></h4>
+   </div>
+</div>
+<div class="split right">
+   <div id=user>
+      <app-header></app-header>
+   </div>
+   <div *ngIf=isApproved>
+      <div id=card>
+         <h3><i>{{card.cardType}}</i></h3>
+         <b> Card Number:</b> {{ card.cardNumber}}<br />
+         <b> Amount Granted:</b>Rs.{{card.amountGranted }}<br />
+         <b> Amount Remaining:</b>Rs.{{card.amountRemaining }}<br />
+         <b> Authorized Date:</b>{{card.startDate}}<br />
+         <b> Expiry Date:</b> {{card.expiry_date }}<br />
+         <b>
+            <div *ngIf="isApproved" id="valid">Approved</div>
+         </b>
+         <b>
+            <div *ngIf="!isApproved" id="invalid">Unapproved</div>
+         </b>
+      </div>
+      <div class="emi">
+         <div *ngIf="isPending">
+            <div class="notify">
+               <div *ngIf="!isOverdue ; then thenBlock; else elseBlock"></div>
+               <ng-template #thenBlock>
+                  <strong>{{daysLeft}} days</strong>
+                  remaining for your next installment due.<a routerLink='installment'>Click here</a> to check!!
+               </ng-template>
+               <ng-template #elseBlock>
+                  One due pending. <a routerLink='installment'>Click here</a> to check!!
+               </ng-template>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,55 @@
+div {
+    position: absolute;
+    top:20%;
+    left:30%;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height:60%;
+    width:40%;
+    background-color:  #f7f7f7;
+    padding-left: 10%;
+    padding-top: 2%;
+}
+button{
+    background-color: #191970;
+    color: white;
+    position: absolute;
+    top:70%;
+
+}
+button:disabled,
+button[disabled]:hover{
+  background-color: #191970;
+  color: white;
+}
+button:hover{
+    background-color:#191970 ;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+h3{
+    color :#191970;
+    font-weight: bolder;
+    position: absolute;
+    left:34%;
+    top:6%;
+}
+
+div #Confirm{
+    position: relative;
+    top:30%;
+    left:20%;
+    font-weight: bolder;
+}
+
+h4{
+    position: relative;
+    left:-10%;
+    top:20%;
+    font-weight : bold;
+}
+
+div #message{
+    position: relative;
+    top:20%;
+    left:-10%;
+}

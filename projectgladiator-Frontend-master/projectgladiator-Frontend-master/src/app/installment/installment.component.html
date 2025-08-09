@@ -1,0 +1,89 @@
+<div class="split left">
+    <div class="links">
+        <h4><a routerLink='dashboard'>Dashboard</a></h4><br />
+        <h4><a routerLink='products-list'>Products</a></h4><br />
+        <h4><a routerLink='product'>Purchase History</a></h4><br />
+        <h4><a routerLink='transaction'>Recent Transactions</a></h4><br />
+        <h4><a routerLink='profile'>Profile</a></h4>
+    </div>
+</div>
+<div class="split right">
+    <app-header></app-header>
+    <!-- <div class="box"> -->
+        <button (click)="viewAllOrders()">View All Installments</button>
+        <div *ngIf=all>
+            <h2>Pending Installments</h2>
+            <!-- <div *ngIf=orders id="orders"> -->
+
+                <div *ngFor="let o of orders" id="order">
+                    <img id="p-image" src={{o.product.imageUrl}} /><br><br>
+                    <div id=contents>
+                        <h3>{{o.product.name}}<br></h3>
+                        <br>
+
+                        {{o.product.productDetails}}<br><br>
+                        <button id="{{o.orderId}}" (click)="viewInstallments($event)">View Installments</button>
+                        <button id="{{o.orderId}}" (click)="isInstallmentPaid($event)">Pay Installment</button><br>
+                        <br>
+                        <div id="installment" *ngFor="let i of installments">
+                            <div *ngIf="o.orderId==i.order.orderId && !disablebutton">
+                                <table id="users">
+                                    <tr>
+                                        <th>Installment number</th>
+                                        <th>Due date</th>
+                                        <th>Installment amount</th>
+                                        <th>Status</th>
+                                    </tr>
+                                    <tr>
+                                        <td>{{i.installmentNumber}}</td>
+                                        <td>{{i.dueDate}}</td>
+                                        <td>{{i.installmentAmount | number : '1.2-2'}}</td>
+                                        <td>{{i.status}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- <ng-template #elseBlock>  -->
+            <div *ngIf=!all id="order">
+                <h4>All Installment Details</h4>
+                <div *ngFor="let o of allOrders" id="order">
+                    <img id="p-image" src={{o.product.imageUrl}} /><br><br>
+                    <div id=contents>
+                        <h3>{{o.product.name}}<br></h3>
+                        <br>
+
+                        {{o.product.productDetails}}<br><br>
+                        <button id="{{o.orderId}}" (click)="viewInstallments($event)">View Installments</button>
+                        <!--  <button id="{{o.orderId}}" (click)="isInstallmentPaid($event)">Pay Installment</button><br> -->
+                        <br>
+                        <div id="installment" *ngFor="let i of installments">
+                            <div *ngIf="o.orderId==i.order.orderId && !disablebutton">
+                                <table id="users">
+                                    <tr>
+                                        <th>Installment number</th>
+                                        <th>Due date</th>
+                                        <th>Installment amount</th>
+                                        <th>Status</th>
+                                    </tr>
+                                    <tr>
+                                        <td>{{i.installmentNumber}}</td>
+                                        <td>{{i.dueDate}}</td>
+                                        <td>{{i.installmentAmount | number : '1.2-2'}}</td>
+                                        <td>{{i.status}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- </ng-template> -->
+
+        
+    <!-- </div> -->
+</div>

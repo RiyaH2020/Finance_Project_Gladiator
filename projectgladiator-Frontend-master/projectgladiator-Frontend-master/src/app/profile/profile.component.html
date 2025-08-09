@@ -1,0 +1,116 @@
+<div class="split left">
+    <div class = "links">
+          <h4><a routerLink='dashboard'>Dashboard</a></h4><br />
+          <h4><a routerLink='products-list'>Products</a></h4><br />
+          <div *ngIf="isApproved">
+            <h4><a routerLink='product'>Purchase History</a></h4><br />
+            <h4><a routerLink='transaction'>Recent Transactions</a></h4><br />
+            <h4><a routerLink='installment'>Installments</a></h4><br />
+         </div>
+    </div>
+</div>
+<div class="split right">
+<div class="container">
+    <div>
+        <form #registerForm="ngForm" (ngSubmit)="update()">
+
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" 
+                required [(ngModel)]=updateUser.name name="name" #name="ngModel">
+                
+                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                    Name is Required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="text" class="form-control" id="phoneNumber"
+                required [(ngModel)]=updateUser.phoneNumber name="phoneno" #phoneno="ngModel">
+
+                <div [hidden]="phoneno.valid || phoneno.pristine" class="alert alert-danger">
+                    Phone Number is Required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email"
+                required [(ngModel)]=updateUser.email name="email" #email="ngModel">
+
+                <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                    Email is Required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username"
+                required [(ngModel)]=updateUser.newUserName name="username" #username="ngModel">
+
+                <div [hidden]="username.valid || username.pristine" class="alert alert-danger">
+                    Username is Required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" class="form-control" id="address"
+                required [(ngModel)]=updateUser.address name="address" #address="ngModel">
+
+                <div [hidden]="address.valid || address.pristine" class="alert alert-danger">
+                    Address is Required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="bank">Bank Name:</label>
+                <input type="text" class="form-control" id="bank"
+                required [(ngModel)]=updateUser.bankName name="bankName" #bankName="ngModel">
+
+                <div [hidden]="bankName.valid || bankName.pristine" class="alert alert-danger">
+                     Bank Name is Required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="accountNumber">Account Number:</label>
+                <input type="text" class="form-control" id="accountNumber"
+                required [(ngModel)]=updateUser.accountNumber name="accountno" #accountno="ngModel">
+
+                <div [hidden]="accountno.valid || accountno.pristine" class="alert alert-danger">
+                    Account Number is Required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="ifsc">IFSC Code:</label>
+                <input type="text" class="form-control" id="ifsc"
+                required [(ngModel)]=updateUser.ifsc name="ifsc" #ifsc="ngModel">
+
+                <div [hidden]="ifsc.valid || ifsc.pristine" class="alert alert-danger">
+                    IFSC Code is Required.
+                </div>
+            </div>
+            <div class="password-change">
+                <button type="button" class="btn btn-primary" (click)="showPassword()">Update Password</button>
+                <div *ngIf="password">
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password"
+                        required [(ngModel)]=updateUser.password name="password" #ifsc="ngModel">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password:</label>
+                        <input type="password" class="form-control" id="confirm-password"
+                        required [(ngModel)]=confirmPassword name="confirm-password" #ifsc="ngModel">
+                    </div>
+                </div>
+            </div><br />
+            <button type="submit" [disabled]="!registerForm.form.valid" class="btn btn-success">Update</button>
+        </form>
+    </div>
+
+    </div>
+</div>
